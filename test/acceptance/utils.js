@@ -55,5 +55,35 @@ describe('lib/utils', function () {
       ].join("\r\n");
       utils.clean(fn).should.equal("if (false) {\n\tvar json = {\n\t\tone : 1\n\t};\n}");
     });
+
+    it("should format es6 arrow functions", function () {
+      var fn = [
+        "() => {",
+        "  var a = 1;",
+        "}"
+      ].join("\n");
+      utils.clean(fn).should.equal("var a = 1;");
+    });
+
+    it("should format es6 arrow functions with implicit return", function () {
+      var fn = "() => foo()";
+      utils.clean(fn).should.equal("foo()");
+    });
+  });
+
+  describe('stringify', function(){
+    it('should canoncalize the object', function(){
+      var travis = { name: 'travis', age: 24 };
+      var travis2 = { age: 24, name: 'travis' };
+
+      utils.stringify(travis).should.equal(utils.stringify(travis2));
+    });
+
+    it('should handle circular structures', function(){
+      var travis = { name: 'travis' };
+      travis.whoami = travis;
+
+      utils.stringify(travis).should.equal('{\n  "name": "travis"\n  "whoami": "[Circular]"\n}');
+    });
   });
 });

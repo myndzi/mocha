@@ -1,3 +1,54 @@
+1.22.1-3 / 2014-07-27
+==================
+
+  * fix: local uis and reporters (#1288)
+  * fix: building 1.21.0's changes in the browser (#1284)
+
+1.21.0 / 2014-07-23
+==================
+
+  * add: --no-timeouts option (#1262, #1268)
+  * add: --*- deprecation node flags (#1217)
+  * add: --watch-extensions argument (#1247)
+  * change: spec reporter is default (#1228)
+  * fix: diff output showing incorrect +/- (#1182)
+  * fix: diffs of circular structures (#1179)
+  * fix: re-render the progress bar when progress has changed only (#1151)
+  * fix support for environments with global and window (#1159)
+  * fix: reverting to previously defined onerror handler (#1178)
+  * fix: stringify non error objects passed to done() (#1270)
+  * fix: using local ui, reporters (#1267)
+  * fix: cleaning es6 arrows (#1176)
+  * fix: don't include attrs in failure tag for xunit (#1244)
+  * fix: fail tests that return a promise if promise is rejected w/o a reason (#1224)
+  * fix: showing failed tests in doc reporter (#1117)
+  * fix: dot reporter dots being off (#1204)
+  * fix: catch empty throws (#1219)
+  * fix: honoring timeout for sync operations (#1242)
+  * update: growl to 1.8.0
+
+1.20.1 / 2014-06-03
+==================
+
+  * update: should dev dependency to ~4.0.0 (#1231)
+
+1.20.0 / 2014-05-28
+==================
+
+  * add: filenames to suite objects (#1222)
+
+1.19.0 / 2014-05-17
+==================
+
+  * add: browser script option to package.json
+  * add: export file in Mocha.Test objects (#1174)
+  * add: add docs for wrapped node flags
+  * fix: mocha.run() to return error status in browser (#1216)
+  * fix: clean() to show failure details (#1205)
+  * fix: regex that generates html for new keyword (#1201)
+  * fix: sibling suites have inherited but separate contexts (#1164)
+
+
 1.18.2 / 2014-03-18
 ==================
 
